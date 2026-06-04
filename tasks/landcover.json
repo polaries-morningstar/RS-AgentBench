@@ -1,0 +1,20 @@
+{
+  "task_type": "land_classification",
+  "dataset": "sentinel2_worldcover_v1_4class",
+  "input_format": "tif",
+  "output_format": "png",
+  "description": "Classify each pixel into one of 4 land cover types from a 10-band Sentinel-2 image.",
+  "prompt_template": "Task: classify each pixel of a 10-band Sentinel-2 surface-reflectance image at '{image_path}' into one of 4 land-cover classes: 0 = water, 1 = vegetation, 2 = built-up, 3 = other (anything not water/vegetation/built-up — typically bare ground, sand, rock, or snow). Channel layout (0-indexed): 0=B02, 1=B03, 2=B04, 3=B08, 4=B05, 5=B06, 6=B07, 7=B8A, 8=B11, 9=B12 (Sentinel-2 band codes; reflectance values are scaled by 10000). Save the result as a single-band PNG at '{output_path}' with pixel values 0/1/2/3 (255 = ignore, but normally every pixel should be classified). The output must be {width}x{height} pixels.",
+  "image_dir": "datasets_tif/landcover/data",
+  "label_dir": "datasets_tif/landcover/data",
+  "samples_file": "datasets_tif/landcover/samples_v1.json",
+  "image_filename": "input.tif",
+  "label_filename": "label.png",
+  "output_filename": "output.png",
+  "image_size": [1024, 1024],
+  "evaluation": "multiclass",
+  "num_classes": 4,
+  "class_names": ["water", "vegetation", "built-up", "other"],
+  "ignore_index": 255,
+  "metrics": ["oa", "kappa", "mean_f1", "per_class_f1"]
+}

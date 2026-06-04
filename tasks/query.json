@@ -1,0 +1,22 @@
+{
+    "task_type": "compositional_spatial_query",
+    "dataset": "esa_worldcover_compositional_v1",
+    "input_format": "tif",
+    "output_format": "png",
+    "description": "Compositional spatial query: each sample carries a different natural-language query that combines a target land-cover class (e.g. tree, grassland, built-up, water, bare, cropland) with a spatial constraint relative to a different reference class (e.g. 'within 200m of', 'farther than 300m from'). The agent must (a) detect the target class spectrally, (b) detect the reference class, (c) compute spatial proximity, (d) intersect. No single fixed pipeline can answer all queries.",
+    "prompt_template": "Task: identify, in a 10-band Sentinel-2 surface-reflectance image at '{image_path}', the pixels matching the following natural-language description: \"{query_text}\". Channel layout (0-indexed): 0=B02, 1=B03, 2=B04, 3=B08, 4=B05, 5=B06, 6=B07, 7=B8A, 8=B11, 9=B12 (Sentinel-2 codes; reflectance scaled by 10000). At Sentinel-2 native resolution, 1 pixel = 10 meters. Save a single-band binary PNG mask to '{output_path}' — target = 255, background = 0, size {width}x{height}.",
+    "image_dir": "datasets_tif/query/data",
+    "label_dir": "datasets_tif/query/data",
+    "samples_file": "datasets_tif/query/samples_v1.json",
+    "image_filename": "input.tif",
+    "label_filename": "label.png",
+    "output_filename": "output.png",
+    "image_size": [1024, 1024],
+    "evaluation": "binary",
+    "metrics": [
+        "f1",
+        "iou",
+        "precision",
+        "recall"
+    ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "lake_geneva_ch__t5",
+    "target_class": 10,
+    "target_class_name": "tree-covered areas (forests, woodland)",
+    "constraint_class": 80,
+    "constraint_class_name": "permanent water bodies (lakes, rivers, reservoirs, sea)",
+    "spatial_op": "within",
+    "K_meters": 300,
+    "query_text": "tree-covered areas located within 300m of any permanent water body"
+  },
+  {
+    "id": "hamburg_de__t5",
+    "target_class": 30,
+    "target_class_name": "grassland (meadows, pastures, natural grasses)",
+    "constraint_class": 40,
+    "constraint_class_name": "cropland (agricultural fields, croplands)",
+    "spatial_op": "within",
+    "K_meters": 200,
+    "query_text": "grassland that lies within 200m of cropland (transition zones between meadow and farm)"
+  },
+  {
+    "id": "yangtze_delta_cn__t5",
+    "target_class": 80,
+    "target_class_name": "permanent water bodies (lakes, rivers, reservoirs, sea)",
+    "constraint_class": 50,
+    "constraint_class_name": "built-up surfaces (buildings, roads, parking lots, paved areas)",
+    "spatial_op": "within",
+    "K_meters": 300,
+    "query_text": "permanent water-body pixels lying within 300m of built-up surfaces (urban riverside or harbour water)"
+  },
+  {
+    "id": "manila_ph__t5",
+    "target_class": 10,
+    "target_class_name": "tree-covered areas (forests, woodland)",
+    "constraint_class": 50,
+    "constraint_class_name": "built-up surfaces (buildings, roads, parking lots, paved areas)",
+    "spatial_op": "within",
+    "K_meters": 250,
+    "query_text": "tree-covered areas located within 250m of built-up surfaces (urban / suburban greenery)"
+  },
+  {
+    "id": "salton_sea_usa__t5",
+    "target_class": 60,
+    "target_class_name": "bare or sparsely vegetated ground (rock, sand, gravel, exposed soil)",
+    "constraint_class": 80,
+    "constraint_class_name": "permanent water bodies (lakes, rivers, reservoirs, sea)",
+    "spatial_op": "within",
+    "K_meters": 400,
+    "query_text": "bare or sparsely vegetated ground that is within 400m of any water body (saline shoreline / lakebed margin)"
+  },
+  {
+    "id": "phoenix_usa__t5",
+    "target_class": 60,
+    "target_class_name": "bare or sparsely vegetated ground (rock, sand, gravel, exposed soil)",
+    "constraint_class": 50,
+    "constraint_class_name": "built-up surfaces (buildings, roads, parking lots, paved areas)",
+    "spatial_op": "within",
+    "K_meters": 300,
+    "query_text": "bare or sparsely vegetated ground located within 300m of built-up surfaces (urban-desert interface in arid cities)"
+  },
+  {
+    "id": "cape_town_za__t5",
+    "target_class": 10,
+    "target_class_name": "tree-covered areas (forests, woodland)",
+    "constraint_class": 80,
+    "constraint_class_name": "permanent water bodies (lakes, rivers, reservoirs, sea)",
+    "spatial_op": "within",
+    "K_meters": 500,
+    "query_text": "tree-covered areas located within 500m of any permanent water body (riparian / coastal forest)"
+  },
+  {
+    "id": "nile_delta_eg__t5",
+    "target_class": 40,
+    "target_class_name": "cropland (agricultural fields, croplands)",
+    "constraint_class": 80,
+    "constraint_class_name": "permanent water bodies (lakes, rivers, reservoirs, sea)",
+    "spatial_op": "within",
+    "K_meters": 200,
+    "query_text": "cropland located within 200m of any permanent water body (irrigated agricultural fields adjacent to canals/rivers)"
+  },
+  {
+    "id": "sydney_au__t5",
+    "target_class": 50,
+    "target_class_name": "built-up surfaces (buildings, roads, parking lots, paved areas)",
+    "constraint_class": 80,
+    "constraint_class_name": "permanent water bodies (lakes, rivers, reservoirs, sea)",
+    "spatial_op": "within",
+    "K_meters": 150,
+    "query_text": "built-up surfaces located within 150m of any permanent water body (waterfront urban districts)"
+  },
+  {
+    "id": "auckland_nz__t5",
+    "target_class": 30,
+    "target_class_name": "grassland (meadows, pastures, natural grasses)",
+    "constraint_class": 10,
+    "constraint_class_name": "tree-covered areas (forests, woodland)",
+    "spatial_op": "within",
+    "K_meters": 200,
+    "query_text": "grassland located within 200m of tree cover (forest-grassland transition / pasture edge)"
+  }
+]

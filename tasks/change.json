@@ -1,0 +1,17 @@
+{
+  "task_type": "change_detection",
+  "dataset": "oscd_sentinel2_v1",
+  "input_format": "tif",
+  "output_format": "png",
+  "description": "Detect changes between two co-registered multispectral Sentinel-2 images of the same area at different dates.",
+  "prompt_template": "Task: detect changes between two co-registered Sentinel-2 surface-reflectance images of the same area at different dates: '{image_a_path}' (earlier) and '{image_b_path}' (later). Both share the same channel layout (0-indexed): 0=B02, 1=B03, 2=B04, 3=B08, 4=B05, 5=B06, 6=B07, 7=B8A, 8=B11, 9=B12 (Sentinel-2 band codes; reflectance values are scaled by 10000). Save a single-band binary PNG mask to '{output_path}' — change = 255, no-change = 0. The output mask MUST match the spatial dimensions of the input images (use rasterio to query their shape — they are NOT a fixed size across samples).",
+  "image_dir": "datasets_tif/change/data",
+  "label_dir": "datasets_tif/change/data",
+  "samples_file": "datasets_tif/change/samples_v1.json",
+  "image_a_filename": "image_A.tif",
+  "image_b_filename": "image_B.tif",
+  "label_filename": "mask.png",
+  "output_filename": "output.png",
+  "evaluation": "binary",
+  "metrics": ["f1", "iou", "precision", "recall"]
+}

@@ -1,0 +1,18 @@
+{
+  "task_type": "burn_scar_detection",
+  "dataset": "cabuar_chabud_test_v1",
+  "input_format": "tif",
+  "output_format": "png",
+  "description": "Detect burned (fire-damaged) areas by comparing pre-fire and post-fire Sentinel-2 images of the same location.",
+  "prompt_template": "Task: detect burned (fire-damaged) areas from a pair of co-registered Sentinel-2 surface-reflectance images of the same location: '{image_a_path}' (acquired BEFORE the fire) and '{image_b_path}' (acquired AFTER the fire). Both share the same channel layout (0-indexed): 0=B02, 1=B03, 2=B04, 3=B08, 4=B05, 5=B06, 6=B07, 7=B8A, 8=B11, 9=B12 (Sentinel-2 band codes; reflectance values are scaled by 10000). Save a single-band binary PNG mask to '{output_path}' — burned = 255, unburned = 0, size {width}x{height}. Notice that pre/post are in temporal order (A=pre, B=post).",
+  "image_dir": "datasets_tif/burn/data",
+  "label_dir": "datasets_tif/burn/data",
+  "samples_file": "datasets_tif/burn/samples_v1.json",
+  "image_a_filename": "image_A.tif",
+  "image_b_filename": "image_B.tif",
+  "label_filename": "mask.png",
+  "output_filename": "output.png",
+  "image_size": [512, 512],
+  "evaluation": "binary",
+  "metrics": ["f1", "iou", "precision", "recall"]
+}

@@ -1,0 +1,17 @@
+{
+  "task_type": "water_extraction",
+  "dataset": "sentinel2_worldcover_v1",
+  "input_format": "tif",
+  "output_format": "png",
+  "description": "Extract water bodies from a 10-band Sentinel-2 surface-reflectance image.",
+  "prompt_template": "Task: extract water bodies (lakes, rivers, ponds, coastal water) from a 10-band Sentinel-2 surface-reflectance image at '{image_path}'. Channel layout (0-indexed): 0=B02, 1=B03, 2=B04, 3=B08, 4=B05, 5=B06, 6=B07, 7=B8A, 8=B11, 9=B12 (Sentinel-2 band codes; reflectance values are scaled by 10000). Save a single-band binary PNG mask to '{output_path}' — water = 255, background = 0, size {width}x{height}.",
+  "image_dir": "datasets_tif/water/data",
+  "label_dir": "datasets_tif/water/data",
+  "samples_file": "datasets_tif/water/samples_v1.json",
+  "image_filename": "input.tif",
+  "label_filename": "label.png",
+  "output_filename": "output.png",
+  "image_size": [1024, 1024],
+  "evaluation": "binary",
+  "metrics": ["f1", "iou", "precision", "recall"]
+}
